@@ -37,6 +37,7 @@ module tt_um_mattvenn_spi_test (
   // Bi direction IOs [7] and [3:0] as outputs
   assign uio_oe[7]   = 1'b1;
   assign uio_oe[3:0] = 4'b1111;
+  assign uo_out = 8'b0;
 
   // Input ports
   assign cpol      = ui_in[0];
@@ -71,6 +72,7 @@ module tt_um_mattvenn_spi_test (
   wire [NUM_CFG*REG_WIDTH-1:0] config_regs;
   wire [NUM_STATUS*REG_WIDTH-1:0] status_regs;
 
+  // todo - set these to be some read only part of your design
   assign status_regs[7:0]   = 0; // [0][7:0]
   assign status_regs[15:8]  = 0; // [1][7:0]
   assign status_regs[19:16] = 0; // [2][3:0]
