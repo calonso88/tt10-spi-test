@@ -5,13 +5,14 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = project.v
+PROJECT_SOURCES = tt_um_mattvenn_spi_test.v synchronizer.sv spi_wrapper.sv spi_reg.sv rising_edge_detector.sv falling_edge_detector.sv reclocking.sv
 
 ifneq ($(GATES),yes)
 
 # RTL simulation:
 SIM_BUILD				= sim_build/rtl
 VERILOG_SOURCES += $(addprefix $(SRC_DIR)/,$(PROJECT_SOURCES))
+COMPILE_ARGS 		+= -I$(SRC_DIR)
 
 else
 
@@ -30,11 +31,8 @@ VERILOG_SOURCES += $(PWD)/gate_level_netlist.v
 
 endif
 
-# Allow sharing configuration between design and testbench via `include`:
-COMPILE_ARGS 		+= -I$(SRC_DIR)
-
 # Include the testbench sources:
-VERILOG_SOURCES += $(PWD)/tb.v
+VERILOG_SOURCES += $(PWD)/tb.v 
 TOPLEVEL = tb
 
 # MODULE is the basename of the Python test file

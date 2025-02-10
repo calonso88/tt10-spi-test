@@ -26,12 +26,6 @@ make -B GATES=yes
 
 ## How to view the VCD file
 
-Using GTKWave
 ```sh
 gtkwave tb.vcd tb.gtkw
-```
-
-Using Surfer
-```sh
-surfer tb.vcd
 ```
