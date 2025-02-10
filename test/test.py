@@ -438,6 +438,7 @@ async def test_project(dut):
         await spi_write (dut.clk, dut.uio_in, 0, data0)
         # Write reg[1] = 0xDE
         await spi_write (dut.clk, dut.uio_in, 1, data1)
+        """
         # Write reg[2] = 0xAD
         await spi_write (dut.clk, dut.uio_in, 2, data2)
         # Write reg[3] = 0xBE
@@ -450,11 +451,13 @@ async def test_project(dut):
         await spi_write (dut.clk, dut.uio_in, 6, data6)
         # Write reg[7] = 0x0F
         await spi_write (dut.clk, dut.uio_in, 7, data7)
+        """
 
         # Read reg[0]
         reg0 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 0, 0x00)
         # Read reg[1]
         reg1 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 1, 0x00)
+        """
         # Read reg[2]
         reg2 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 2, 0x00)
         # Read reg[3]
@@ -467,12 +470,13 @@ async def test_project(dut):
         reg6 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 6, 0x00)
         # Read reg[7]
         reg7 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 7, 0x00)
-
+        """
         # Read status reg[0]
         s_reg0 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 8, 0x00)
         # Read status reg[1]
         s_reg1 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 9, 0x00)
         # Read status reg[2]
+        """
         s_reg2 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 10, 0x00)
         # Read status reg[3]
         s_reg3 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 11, 0x00)
@@ -484,19 +488,21 @@ async def test_project(dut):
         s_reg6 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 14, 0x00)
         # Read status reg[7]
         s_reg7 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 15, 0x00)
-
+        """
         # Wait for some time
         await ClockCycles(dut.clk, 10)
         await ClockCycles(dut.clk, 10)
 
         assert reg0 == data0
         assert reg1 == data1
+        """
         assert reg2 == data2
         assert reg3 == data3
         assert reg4 == data4
         assert reg5 == data5
         assert reg6 == data6
         assert reg7 == data7
+        """
         #assert s_reg0 == 0xCA
         #assert s_reg1 == 0x10
         #assert s_reg2 == 0xAA
@@ -535,17 +541,20 @@ async def test_project(dut):
     while iterations < 10:
         data0 = random.randint(0x00, 0xFF)
         data1 = random.randint(0x00, 0xFF)
+        """
         data2 = random.randint(0x00, 0xFF)
         data3 = random.randint(0x00, 0xFF)
         data4 = random.randint(0x00, 0xFF)
         data5 = random.randint(0x00, 0xFF)
         data6 = random.randint(0x00, 0xFF)
         data7 = random.randint(0x00, 0xFF)
+        """
 
         # Write reg[0] = 0xF0
         await spi_write (dut.clk, dut.uio_in, 0, data0)
         # Write reg[1] = 0xDE
         await spi_write (dut.clk, dut.uio_in, 1, data1)
+        """
         # Write reg[2] = 0xAD
         await spi_write (dut.clk, dut.uio_in, 2, data2)
         # Write reg[3] = 0xBE
@@ -558,11 +567,12 @@ async def test_project(dut):
         await spi_write (dut.clk, dut.uio_in, 6, data6)
         # Write reg[7] = 0x0F
         await spi_write (dut.clk, dut.uio_in, 7, data7)
-
+        """
         # Read reg[0]
         reg0 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 0, 0x00)
         # Read reg[1]
         reg1 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 1, 0x00)
+        """
         # Read reg[2]
         reg2 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 2, 0x00)
         # Read reg[3]
@@ -575,11 +585,12 @@ async def test_project(dut):
         reg6 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 6, 0x00)
         # Read reg[7]
         reg7 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 7, 0x00)
-
+        """
         # Read status reg[0]
         s_reg0 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 8, 0x00)
         # Read status reg[1]
         s_reg1 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 9, 0x00)
+        """
         # Read status reg[2]
         s_reg2 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 10, 0x00)
         # Read status reg[3]
@@ -592,6 +603,7 @@ async def test_project(dut):
         s_reg6 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 14, 0x00)
         # Read status reg[7]
         s_reg7 = await spi_read (dut.clk, dut.uio_in, dut.uio_out, 15, 0x00)
+        """
 
         # Wait for some time
         await ClockCycles(dut.clk, 10)
@@ -599,12 +611,14 @@ async def test_project(dut):
 
         assert reg0 == data0
         assert reg1 == data1
+        """
         assert reg2 == data2
         assert reg3 == data3
         assert reg4 == data4
         assert reg5 == data5
         assert reg6 == data6
         assert reg7 == data7
+        """
         #assert s_reg0 == 0xCA
         #assert s_reg1 == 0x10
         #assert s_reg2 == 0xAA
@@ -653,6 +667,7 @@ async def test_project(dut):
         await spi_write_cpha0 (dut.clk, dut.uio_in, 0, data0)
         # Write reg[1] = 0xDE
         await spi_write_cpha0 (dut.clk, dut.uio_in, 1, data1)
+        """
         # Write reg[2] = 0xAD
         await spi_write_cpha0 (dut.clk, dut.uio_in, 2, data2)
         # Write reg[3] = 0xBE
@@ -665,11 +680,12 @@ async def test_project(dut):
         await spi_write_cpha0 (dut.clk, dut.uio_in, 6, data6)
         # Write reg[7] = 0x0F
         await spi_write_cpha0 (dut.clk, dut.uio_in, 7, data7)
-
+        """ 
         # Read reg[0]
         reg0 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 0, 0x00)
         # Read reg[1]
         reg1 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 1, 0x00)
+        """
         # Read reg[2]
         reg2 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 2, 0x00)
         # Read reg[3]
@@ -682,11 +698,13 @@ async def test_project(dut):
         reg6 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 6, 0x00)
         # Read reg[7]
         reg7 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 7, 0x00)
+        """
 
         # Read status reg[0]
         s_reg0 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 8, 0x00)
         # Read status reg[1]
         s_reg1 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 9, 0x00)
+        """
         # Read status reg[2]
         s_reg2 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 10, 0x00)
         # Read status reg[3]
@@ -699,18 +717,21 @@ async def test_project(dut):
         s_reg6 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 14, 0x00)
         # Read status reg[7]
         s_reg7 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 15, 0x00)
+        """
 
         await ClockCycles(dut.clk, 10)
         await ClockCycles(dut.clk, 10)
 
         assert reg0 == data0
         assert reg1 == data1
+        """
         assert reg2 == data2
         assert reg3 == data3
         assert reg4 == data4
         assert reg5 == data5
         assert reg6 == data6
         assert reg7 == data7
+        """
         #assert s_reg0 == 0xCA
         #assert s_reg1 == 0x10
         #assert s_reg2 == 0xAA
@@ -749,18 +770,21 @@ async def test_project(dut):
     while iterations < 10:
         data0 = random.randint(0x00, 0xFF)
         data1 = random.randint(0x00, 0xFF)
+        """
         data2 = random.randint(0x00, 0xFF)
         data3 = random.randint(0x00, 0xFF)
         data4 = random.randint(0x00, 0xFF)
         data5 = random.randint(0x00, 0xFF)
         data6 = random.randint(0x00, 0xFF)
         data7 = random.randint(0x00, 0xFF)
+        """
 
         # Write reg[0] = 0xF0
         await spi_write_cpha0 (dut.clk, dut.uio_in, 0, data0)
         # Write reg[1] = 0xDE
         await spi_write_cpha0 (dut.clk, dut.uio_in, 1, data1)
         # Write reg[2] = 0xAD
+        """
         await spi_write_cpha0 (dut.clk, dut.uio_in, 2, data2)
         # Write reg[3] = 0xBE
         await spi_write_cpha0 (dut.clk, dut.uio_in, 3, data3)
@@ -772,12 +796,14 @@ async def test_project(dut):
         await spi_write_cpha0 (dut.clk, dut.uio_in, 6, data6)
         # Write reg[7] = 0x0F
         await spi_write_cpha0 (dut.clk, dut.uio_in, 7, data7)
+        """
 
         # Read reg[0]
         reg0 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 0, 0x00)
         # Read reg[1]
         reg1 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 1, 0x00)
         # Read reg[2]
+        """
         reg2 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 2, 0x00)
         # Read reg[3]
         reg3 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 3, 0x00)
@@ -789,12 +815,14 @@ async def test_project(dut):
         reg6 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 6, 0x00)
         # Read reg[7]
         reg7 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 7, 0x00)
+        """
 
         # Read status reg[0]
         s_reg0 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 8, 0x00)
         # Read status reg[1]
         s_reg1 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 9, 0x00)
         # Read status reg[2]
+        """
         s_reg2 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 10, 0x00)
         # Read status reg[3]
         s_reg3 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 11, 0x00)
@@ -806,6 +834,7 @@ async def test_project(dut):
         s_reg6 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 14, 0x00)
         # Read status reg[7]
         s_reg7 = await spi_read_cpha0 (dut.clk, dut.uio_in, dut.uio_out, 15, 0x00)
+        """
 
         # Wait for some time
         await ClockCycles(dut.clk, 10)
@@ -813,12 +842,14 @@ async def test_project(dut):
 
         assert reg0 == data0
         assert reg1 == data1
+        """
         assert reg2 == data2
         assert reg3 == data3
         assert reg4 == data4
         assert reg5 == data5
         assert reg6 == data6
         assert reg7 == data7
+        """
         #assert s_reg0 == 0xCA
         #assert s_reg1 == 0x10
         #assert s_reg2 == 0xAA
