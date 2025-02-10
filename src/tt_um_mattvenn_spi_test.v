@@ -64,7 +64,7 @@ module tt_um_mattvenn_spi_test (
   synchronizer #(.STAGES(SYNC_STAGES), .WIDTH(SYNC_WIDTH)) synchronizer_spi_mode_cpha (.rstb(rst_n), .clk(clk), .ena(ena), .data_in(cpha), .data_out(cpha_sync));
 
   // Amount of CFG Regs and Status Regs + Regs Width
-  localparam int NUM_CFG = 8;
+  localparam int NUM_CFG = 2;
   localparam int NUM_STATUS = NUM_CFG;
   localparam int REG_WIDTH = 8;
 
