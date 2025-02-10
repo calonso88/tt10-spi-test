@@ -17,17 +17,11 @@ project:
   # Source files must be in ./src and you must list each source file separately, one per line.
   # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:        
-    - "tt_um_calonso88_74181.v"
-    - "alu_74181.sv"
-    - "alu_74181_logic.sv"
-    - "alu_74181_arith.sv"
-    - "bin_to_7seg_decoder.sv"
     - "synchronizer.sv"
     - "spi_wrapper.sv"
     - "spi_reg.sv"
     - "falling_edge_detector.sv"
     - "rising_edge_detector.sv"
-    - "mux6x1.sv"
     - "reclocking.sv"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
